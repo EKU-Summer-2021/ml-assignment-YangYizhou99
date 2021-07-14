@@ -67,7 +67,6 @@ if __name__ == '__main__':
     ax.set_xticklabels(['target_class1','target_class2'\
                         ,'output_class1','output_class2'])
     plt.savefig("classifier.png")
-    print()
 
 
 
