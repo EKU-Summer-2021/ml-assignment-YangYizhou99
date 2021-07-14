@@ -12,7 +12,6 @@ if __name__ == '__main__':
     ]
     model = DecisionTree(random_state=42)
     grid_search = GridSearchCV(model, param_grid, cv=5,
-                               scoring='neg_mean_squared_error',
                                return_train_score=True)
     grid_search.fit(input_train, target_train)
     cvres = grid_search.cv_results_

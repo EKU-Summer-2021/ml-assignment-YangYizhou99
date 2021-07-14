@@ -4,6 +4,7 @@
 import urllib.request
 import pandas as pd
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
 
 def fetch_data():
     '''
@@ -35,5 +36,6 @@ def load_data():
     dataset=pd.read_csv(csv_path)
     data = dataset.drop("csMPa", axis=1)
     target = dataset.csMPa.copy()
+
     input_train, input_test, target_train, target_test = train_test_split(data, target, test_size=0.15,random_state=42)
     return input_train, input_test, target_train, target_test
