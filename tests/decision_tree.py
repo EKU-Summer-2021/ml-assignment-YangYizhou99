@@ -10,4 +10,5 @@ class DecisionTreeTest(unittest.TestCase):
         input_train, input_test, target_train, target_test = tree_read.load_data()
         model = DecisionTree(max_depth=2, random_state=42)
         model.fit(input_train, target_train)
-        self.assertEqual(target_train[0], 79.99)
+        output=model.predict(input_test)
+        self.assertEqual(output[0], 36.68636761487964)

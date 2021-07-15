@@ -10,4 +10,5 @@ class NeighborsClassifierTest(unittest.TestCase):
         input_train, input_test, target_train, target_test = neighbor_read.load_data()
         model = NeighborsClassifier().model
         model.fit(input_train, target_train)
-        self.assertEqual(target_train[0], 1)
+        output=model.predict(input_test)
+        self.assertEqual(output[0], 0)

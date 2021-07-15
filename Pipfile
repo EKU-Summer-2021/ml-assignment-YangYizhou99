@@ -12,6 +12,9 @@ numpy = '*'
 pandas = "*"
 scikit-learn = "*"
 matplotlib = "*"
+graphviz = "*"
+pydotplus = "*"
+six = "*"
 
 [requires]
 python_version = "3.8"

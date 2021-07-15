@@ -8,7 +8,7 @@ class NeighborsClassifier:
     '''
         this class is NeighborsClassifier
     '''
-    def __init__(self, n_neighbors=1000,leaf_size=30):
+    def __init__(self, n_neighbors=10,leaf_size=30):
         '''
             this method initialize
         '''

@@ -20,7 +20,11 @@ if __name__ == '__main__':
                          'parameters':cvres["params"]})
     save.to_csv('decision_tree.csv', index=False)
     fig = plt.figure(figsize=(25, 20))
-    _ = tree.plot_tree(grid_search.best_estimator_)
+    _ = tree.plot_tree(grid_search.best_estimator_,
+                       max_depth=3,
+                       feature_names=["cement", "slag", "flyash", "water", "superplasticizer", "coarseaggregate",
+                                      "fineaggregate", "age"],
+                       filled=True)
     fig.savefig("decistion_tree.png")
     # new line
     # new line
