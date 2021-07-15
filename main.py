@@ -9,7 +9,7 @@ if __name__ == '__main__':
     input_train_tree, input_test_tree, target_train_tree,\
     target_test_tree = tree_read.load_data()
     param_grid = [
-        {'min_samples_split': [3], 'min_samples_leaf': [2]}
+        {'min_samples_split': [3,4,5], 'min_samples_leaf': [2]}
     ]
     decision_tree = DecisionTree(random_state=42)
     grid_search = GridSearchCV(decision_tree, param_grid, cv=5,
@@ -28,7 +28,7 @@ if __name__ == '__main__':
     input_train_neighbor, input_test_neighbor, \
     target_train_neighbor, target_test_neighbor = neighbor_read.load_data()
     param_grid = [
-        {'n_neighbors': [15], 'leaf_size': [5]}
+        {'n_neighbors': [15,20,30], 'leaf_size': [5]}
     ]
     neighbor = NeighborsClassifier().model
     grid_search = GridSearchCV(neighbor , param_grid, cv=5,
