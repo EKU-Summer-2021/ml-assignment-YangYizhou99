@@ -10,7 +10,6 @@ from matplotlib import pyplot as plt
 from src import neighbor_read
 from src import NeighborsClassifier
 
-
 def run():
     '''
         this function can fetch the dataset file
@@ -59,10 +58,10 @@ def run():
     plot_list.append(one_counter)
     axis = np.arange(1, 5)
     width = 0.2
-    _, axis = plt.subplots()
-    _ = axis.bar(axis, plot_list, width)
-    axis.set_ylabel('Number')
-    axis.set_xticks(axis)
-    axis.set_xticklabels(['target_class1', 'target_class2' \
+    _, axis_result = plt.subplots()
+    _ = axis_result.bar(axis, plot_list, width)
+    axis_result.set_ylabel('Number')
+    axis_result.set_xticks(axis)
+    axis_result.set_xticklabels(['target_class1', 'target_class2' \
                            , 'output_class1', 'output_class2'])
     plt.savefig(path + "/" + time_str + ".png")
