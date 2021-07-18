@@ -1,4 +1,0 @@
-score,parameters
-0.8104774355142386,"{'min_samples_leaf': 2, 'min_samples_split': 3}"
-0.8104774355142386,"{'min_samples_leaf': 2, 'min_samples_split': 4}"
-0.8084326043820752,"{'min_samples_leaf': 2, 'min_samples_split': 5}"

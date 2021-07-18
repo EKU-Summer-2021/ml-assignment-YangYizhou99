@@ -1,4 +1,0 @@
-score,parameters
-0.6576923076923077,"{'leaf_size': 5, 'n_neighbors': 15}"
-0.6613876319758674,"{'leaf_size': 5, 'n_neighbors': 20}"
-0.6184766214177978,"{'leaf_size': 5, 'n_neighbors': 30}"
