@@ -38,13 +38,13 @@ class DecisionTree(DecisionTreeRegressor):
                  ccp_alpha=ccp_alpha)
         self.nothing=0
 
-    def do_right(self):
+    def do_right1(self):
         '''
             this method do nothing
         '''
         return self.nothing
 
-    def do_left(self):
+    def do_left1(self):
         '''
             this method do nothing
         '''
