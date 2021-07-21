@@ -2,6 +2,7 @@
    this file contains function read csv
 '''
 import os
+import configparser
 from datetime import datetime
 from sklearn.model_selection import GridSearchCV
 import numpy as np
@@ -14,6 +15,8 @@ def run():
     '''
         this function can fetch the dataset file
     '''
+    config = configparser.ConfigParser()
+    config.read(os.path.join(os.path.dirname(__file__), '../config', 'classifier.conf'))
     time_str = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
     neighbor_path = "neighbor_classifier_result"
     if not os.path.exists(neighbor_path):
@@ -24,9 +27,10 @@ def run():
     input_train_neighbor, input_test_neighbor, \
     target_train_neighbor, target_test_neighbor = neighbor_read.load_data()
     param_grid = [
-        {'n_neighbors': [15, 20, 30, 31, 32, 33, 34, \
-                         35, 36, 32, 39], \
-         'leaf_size': [5, 6, 4, 7, 8, 9]}
+        {'n_neighbors': [int(_) \
+        for _ in list(config['Parameters']['n_neighbors'].split(" "))],
+         'leaf_size': [int(_) \
+        for _ in list(config['Parameters']['leaf_size'].split(" "))]}
     ]
     neighbor = NeighborsClassifier().model
     grid_search = GridSearchCV(neighbor, param_grid, cv=5,
