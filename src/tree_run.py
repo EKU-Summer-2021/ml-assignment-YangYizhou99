@@ -2,6 +2,7 @@
    this file contains function read csv
 '''
 import os
+import configparser
 from datetime import datetime
 from sklearn import tree
 from sklearn.model_selection import GridSearchCV
@@ -15,16 +16,13 @@ def run():
     '''
         this function can fetch the dataset file
     '''
+    config = configparser.ConfigParser()
+    config.read(os.path.join(os.path.dirname(__file__), '../config', 'tree.conf'))
     input_train_tree, _, target_train_tree, \
     _ = tree_read.load_data()
     param_grid = [
-        {'min_samples_split': [3, 4, 5, 6,\
-                               7, 8, 9, 10,\
-                               11, 12, 13, 14, \
-                               15, 16, 17, 19, 18,\
-                               20, 21, 22, 23, 24, 25, 26,
-                               27 \
-                               ], 'min_samples_leaf': [2]}
+        {'min_samples_split': [int(_) for _ in list(config\
+        ['Parameters']['min_samples_split'].split(" "))], 'min_samples_leaf': [2]}
     ]
     decision_tree = DecisionTree(random_state=42)
     grid_search = GridSearchCV(decision_tree, param_grid, cv=5,

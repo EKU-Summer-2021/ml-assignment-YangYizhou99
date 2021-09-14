@@ -9,11 +9,8 @@ def fetch_data():
     '''
         this function can fetch the dataset file
     '''
-    path = "https://dayangai.c"\
-    "oding.net/p/dayangai/d/daya"\
-    "ngai/git/raw/master/dataset"\
-    "s/Concrete_Data_Yeh.cs"\
-    "v?download=true"
+    path ="https://raw.githubusercontent.com/EKU-Summer-"\
+    "2021/onboarding-fluencity/master/Concrete_Data_Yeh.csv"
     urllib.request.urlretrieve(path, "Concrete_Data_Yeh.csv")
 
 def load_data():

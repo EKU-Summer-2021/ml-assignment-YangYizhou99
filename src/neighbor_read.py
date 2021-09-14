@@ -9,10 +9,10 @@ def fetch_data():
     '''
         this function can fetch the dataset file
     '''
-    path = "https://dayangai.co"\
-            "ding.net/p/dayangai/d/"\
-            "dayangai/git/raw/master/d"\
-            "atasets/heart.csv?download=true"
+    path = "https://"\
+            "raw.githubusercontent"\
+    ".com/EKU-Summer-2021/onboarding-f"\
+            "luencity/master/heart.csv"
     urllib.request.urlretrieve(path, "heart.csv")
 
 def load_data():
